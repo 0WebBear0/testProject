@@ -1,4 +1,4 @@
-# testApp
+# testProject
 
 ## Build Setup
 

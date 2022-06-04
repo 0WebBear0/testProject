@@ -1,5 +1,18 @@
 {
   "Home": "Home",
   "Search": "Search",
+  "Add": "Add",
+  "TypeOfEquipment": "Type of equipment",
+  "SerialNumber": "Serial number",
+  "Note": "Note",
+
+  "CompleteTheField":"complete the field",
+  "SelectField":"Select field",
+
+  "Submit": "Submit",
+  "Reset": "Reset",
+  "ModalAddForm": "Add form",
+  "ModalEditForm": "Edit form",
+
   "Exit": "Exit"
 }

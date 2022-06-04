@@ -26,6 +26,8 @@ export default Vue.extend( {
 
 <style scoped>
 .base-layout{
-  word-break: break-all;
+  word-break: break-word;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 </style>

@@ -1,5 +1,19 @@
 {
   "Home": "Главная",
   "Search": "Поиск",
+  "Add": "Добавить",
+  "TypeOfEquipment": "Тип оборудования",
+  "SerialNumber": "Серийный номер",
+  "Note": "Примечание",
+
+  "CompleteTheField":"Заполните поле",
+  "SelectField":"Выберите поле",
+
+  "Submit": "Отправить",
+  "Reset": "Очистить",
+
+  "ModalAddForm": "Форма добавления",
+  "ModalEditForm": "Форма исправления",
+
   "Exit": "Выход"
 }

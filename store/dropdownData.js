@@ -1,4 +1,4 @@
-import {backDomain} from "~/MainConstants";
+import {backDomain, withBack} from "~/MainConstants";
 
 export const state = () => ({
   dropdownData: [],
@@ -21,16 +21,18 @@ export const actions = {
         })
         .catch((err) => {
           console.log(err)
-          commit("SAVE_DATA", res.data)
+          commit("SAVE_DATA", err)
         })
     }
-    else commit("SAVE_DATA", res.data)
+    else commit("SAVE_DATA")
   },
 }
 
 export const mutations = {
   SAVE_DATA (state, data){
-    state.dropdownData.push("asd","asdasd","asdas")
-    // state.dropdownData = data
+    if (withBack){
+      state.dropdownData = data
+    }
+    else state.dropdownData = ["test","Api не подключён","test"]
   },
 }

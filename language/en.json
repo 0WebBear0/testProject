@@ -1,18 +1,28 @@
 {
   "Home": "Home",
-  "Search": "Search",
   "Add": "Add",
+  "Search": "Search",
   "TypeOfEquipment": "Type of equipment",
   "SerialNumber": "Serial number",
   "Note": "Note",
+  "ShowAll": "Show all",
 
   "CompleteTheField":"complete the field",
   "SelectField":"Select field",
 
   "Submit": "Submit",
   "Reset": "Reset",
+
   "ModalAddForm": "Add form",
   "ModalEditForm": "Edit form",
+
+  "NotesIsEmpty": "Notes is empty. Create new",
+  "NotesIsNotFound": "Notes is not found",
+
+  "SearchBySerialNumber": "Search by SN",
+  "SearchByTypeOfEquipment": "Search by TE",
+  "SearchInProgress": "Search in progress",
+
 
   "Exit": "Exit"
 }

@@ -12,9 +12,9 @@
 
         <!-- Icon box -->
         <div class="icons">
-          <IconPencil class="icons__edit"/>
+          <IconPencil class="icons__edit" @click.native="onEdit()" />
 
-          <IconDelete class="icons__delete"/>
+          <IconDelete class="icons__delete" @click.native="onDelete()"/>
         </div>
 
       </b-list-group-item>
@@ -25,10 +25,17 @@
 
 import IconPencil from "~/components/icons/IconPencil";
 import IconDelete from "~/components/icons/IconDelete";
+
 export default {
   name: "Card",
+
   components: {IconDelete, IconPencil},
+
   props: {
+    gettersId: {
+      type: String,
+      required: true
+    },
     typeOfEquipment: {
       type: String,
       required: true
@@ -37,6 +44,17 @@ export default {
       type: String,
       required: true
     },
+  },
+
+  methods: {
+
+    onDelete(){
+      this.$emit('delete',Number(this.gettersId))
+    },
+
+    onEdit(){
+      this.$emit('edit',Number(this.gettersId))
+    }
   }
 }
 </script>

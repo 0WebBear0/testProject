@@ -1,7 +1,6 @@
 <template>
-  <b-modal id="modal-add-form" centered hide-footer content-class="shadow" :title="$t('ModalAddForm')">
-    <b-form @submit="onSubmit" v-if="show" >
-
+  <b-modal id="modal-edit-form" centered hide-footer content-class="shadow" :title="$t('ModalEditForm')">
+    <b-form @submit="onSubmit" v-if="getNoteById !== null" >
       <b-form-group
         id="input-group-3"
         :label="$t('TypeOfEquipment')"
@@ -55,39 +54,51 @@
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-  name: "ModalAddForm",
+  name: "ModalEditForm",
 
   data() {
     return {
       TypeOfEquipment: null,
       SerialNumber: '',
       Note: '',
-      show: true
     }
   },
 
   props: {
     modalId: String,
+    noteById: Number,
   },
 
   computed: {
     ...mapGetters('dropdownData',['getDropdownData']),
+    ...mapGetters('Forms',['getNoteById']),
     base(){
       return [{ text: this.$t('SelectField'), value: null }, ...this.getDropdownData]
+    },
+  },
+
+  watch: {
+    getNoteById(newData){
+        this.TypeOfEquipment = this.getNoteById?.TypeOfEquipment,
+        this.SerialNumber = this.getNoteById?.SerialNumber,
+        this.Note = this.getNoteById?.Note
     }
   },
 
   methods: {
     ...mapActions('dropdownData',['getDropdownDataAction']),
-    ...mapActions('Forms',['addFormAction']),
+    ...mapActions('Forms',['editNote']),
 
 
     onSubmit(event) {
       event.preventDefault()
-      this.addFormAction({
-        TypeOfEquipment: this.TypeOfEquipment,
-        SerialNumber: this.SerialNumber,
-        Note: this.Note
+      this.editNote( {
+        id:this.noteById,
+        data: {
+          TypeOfEquipment: this.TypeOfEquipment,
+          SerialNumber: this.SerialNumber,
+          Note: this.Note
+        }
       })
       this.reset()
       this.$bvModal.hide(this.modalId)
